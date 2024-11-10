@@ -8,6 +8,8 @@ import Habits from "@/components/devocode/custom/widgets/habits";
 import BoardingDirection from "@/components/devocode/custom/widgets/boarding-direction";
 import AudioPlayer from "@/components/devocode/custom/widgets/audio-player";
 import { MapDirections } from "@/components/devocode/custom/widgets/map-directions";
+import BatteryStats from "@/components/devocode/custom/widgets/battery-stats";
+import { MusicPlayer } from "@/components/devocode/custom/widgets/music-player";
 
 const widgets = [
   { name: "WifiToggle", component: <WifiToggle /> },
@@ -17,6 +19,8 @@ const widgets = [
   { name: "Boarding Direction", component: <BoardingDirection /> },
   { name: "Audio Player", component: <AudioPlayer /> },
   { name: "Map Direction", component: <MapDirections /> },
+  { name: "Battery Charging", component: <BatteryStats /> },
+  { name: "Music Player", component: <MusicPlayer /> },
 ];
 
 export default function Home() {

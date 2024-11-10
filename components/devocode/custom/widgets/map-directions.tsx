@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import CircularProgress from "@/components/devocode/custom/widgets/circular-progress";
+import { CornerUpLeft } from "lucide-react";
 
 interface MapDirectionsProps {
   className?: string;
@@ -15,9 +16,12 @@ export function MapDirections({ className }: MapDirectionsProps) {
         )}
       >
         <div className="flex items-center justify-between">
-          <div className="flex items-end">
-            <p className="text-4xl font-semibold leading-none">2.8</p>
-            <span className="">km</span>
+          <div className="flex items-end gap-2">
+            <CornerUpLeft />
+            <div className="flex items-end">
+              <p className="text-4xl font-semibold leading-none">150</p>
+              <span>m</span>
+            </div>
           </div>
           <CircularProgress
             progress={70}
@@ -27,7 +31,7 @@ export function MapDirections({ className }: MapDirectionsProps) {
             progressColor="#fff"
             innerContent={
               <div className="flex flex-col items-center">
-                <span className="leading-none">64</span>
+                <span className="leading-none">57</span>
                 <span className="leading-none">km</span>
               </div>
             }
@@ -36,16 +40,16 @@ export function MapDirections({ className }: MapDirectionsProps) {
         <hr className="border-[#2C2C2C]" />
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm text-gray-500">Steps</p>
-            <p>2.8 km</p>
+            <p className="text-sm text-gray-500">ETA</p>
+            <p>14:59</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Goal</p>
-            <p>64 km</p>
+            <p className="text-sm text-gray-500">Speed</p>
+            <p>79 km/hr</p>
           </div>
           <div>
-            <p className="text-sm text-gray-500">Calories</p>
-            <p>134kcal</p>
+            <p className="text-sm text-gray-500">Distance Left</p>
+            <p>8.3 kms</p>
           </div>
         </div>
       </div>
