@@ -2,6 +2,7 @@
 import { cn } from "@/lib/utils";
 import { ArrowUpRight, Wifi } from "lucide-react";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 interface WifiToggleProps {
   className?: string;
@@ -29,7 +30,7 @@ export default function WifiToggle({
         )}
       >
         <div className={cn("flex items-center justify-between gap-4")}>
-          <div
+          <motion.div
             className={cn(
               "flex h-12 w-12 cursor-pointer items-center justify-center rounded-full bg-blue-500 text-lg font-bold text-white transition-colors",
               {
@@ -40,7 +41,7 @@ export default function WifiToggle({
             onClick={handleChange}
           >
             <Wifi fontSize={20} />
-          </div>
+          </motion.div>
           <a
             href={href || "#"}
             className={cn(

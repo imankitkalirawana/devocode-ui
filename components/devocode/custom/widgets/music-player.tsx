@@ -1,7 +1,14 @@
 import { cn } from "@/lib/utils";
-import CircularProgress from "@/components/devocode/custom/widgets/circular-progress";
-import Image from "next/image";
-import { LucideProps } from "lucide-react";
+
+import {
+  ListMusic,
+  LucideProps,
+  Pause,
+  Play,
+  Shuffle,
+  SkipBack,
+  SkipForward,
+} from "lucide-react";
 import { motion } from "framer-motion";
 
 interface MusicPlayerProps {
@@ -12,6 +19,11 @@ interface MusicPlayerProps {
   musicArtist: string;
   musicCover: string;
   isPlaying: boolean;
+  onShuffle?: () => void;
+  onPrevious?: () => void;
+  onPlayPause?: () => void;
+  onNext?: () => void;
+  onRepeat?: () => void;
 }
 
 export function MusicPlayer({
@@ -22,6 +34,11 @@ export function MusicPlayer({
   musicArtist = "Ellie Goulding",
   musicCover = "https://upload.wikimedia.org/wikipedia/en/1/17/Ellie_Goulding_-_Love_Me_Like_You_Do.png",
   isPlaying = false,
+  onShuffle,
+  onPrevious,
+  onPlayPause,
+  onNext,
+  onRepeat,
 }: MusicPlayerProps) {
   return (
     <>
@@ -74,7 +91,48 @@ export function MusicPlayer({
             />
           </div>
         </div>
-        <div></div>
+        <div className="grid grid-cols-5 justify-items-center">
+          <motion.button
+            className="w-fit rounded-full p-2 transition-all hover:bg-[#F7F7F7]"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={onShuffle}
+          >
+            <Shuffle size={16} />
+          </motion.button>
+          <motion.button
+            className="w-fit rounded-full p-2 transition-all hover:bg-[#F7F7F7]"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={onPrevious}
+          >
+            <SkipBack size={16} />
+          </motion.button>
+          <motion.button
+            className="w-fit rounded-full p-2 transition-all hover:bg-[#F7F7F7]"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={onPlayPause}
+          >
+            {isPlaying ? <Pause size={16} /> : <Play size={16} />}
+          </motion.button>
+          <motion.button
+            className="w-fit rounded-full p-2 transition-all hover:bg-[#F7F7F7]"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={onNext}
+          >
+            <SkipForward size={16} />
+          </motion.button>
+          <motion.button
+            className="w-fit rounded-full p-2 transition-all hover:bg-[#F7F7F7]"
+            whileTap={{ scale: 0.9 }}
+            whileHover={{ scale: 1.1 }}
+            onClick={onRepeat}
+          >
+            <ListMusic size={16} />
+          </motion.button>
+        </div>
       </div>
     </>
   );

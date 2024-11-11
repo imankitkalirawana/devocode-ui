@@ -1,3 +1,5 @@
+"use client";
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 interface CircularProgressProps {
@@ -48,20 +50,21 @@ const CircularProgress: React.FC<CircularProgressProps> = ({
           }}
         />
 
-        <circle
+        <motion.circle
           cx={size / 2}
           cy={size / 2}
           r={radius}
           strokeWidth={strokeWidth}
           fill="transparent"
-          className="transition-all duration-500 ease-out"
+          className={cn("transition-all duration-500 ease-out")}
           style={{
             color: progressColor,
           }}
           strokeDasharray={circumference}
-          strokeDashoffset={offset}
           stroke="currentColor"
           strokeLinecap="round"
+          initial={{ strokeDashoffset: circumference }}
+          animate={{ strokeDashoffset: offset }}
         />
       </svg>
 

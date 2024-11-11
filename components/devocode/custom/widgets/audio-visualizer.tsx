@@ -6,7 +6,6 @@ const Visualizer = () => {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Simulating audio data updates
     const interval = setInterval(() => {
       setBars(bars.map(() => Math.random() * 100));
 
@@ -28,7 +27,6 @@ const Visualizer = () => {
       ))}
       <motion.div
         className="absolute flex h-[98%] w-full bg-[#1E1E1E] opacity-80"
-        // style={{ left: `${progress}%` }}
         animate={{ left: `${progress}%` }}
         transition={{ type: "linear" }}
       >

@@ -10,6 +10,11 @@ import AudioPlayer from "@/components/devocode/custom/widgets/audio-player";
 import { MapDirections } from "@/components/devocode/custom/widgets/map-directions";
 import BatteryStats from "@/components/devocode/custom/widgets/battery-stats";
 import { MusicPlayer } from "@/components/devocode/custom/widgets/music-player";
+import AnalogClock from "@/components/devocode/custom/widgets/analog-clock";
+import CameraRecording from "@/components/devocode/custom/widgets/camera-recording";
+import AppleCalendarSquare from "@/components/devocode/custom/widgets/apple-calendar-square";
+import BatteryCharging from "@/components/devocode/custom/widgets/battery-charging";
+import AppleBatterySquare from "@/components/devocode/custom/widgets/apple-battery-square";
 
 const widgets = [
   { name: "WifiToggle", component: <WifiToggle /> },
@@ -20,7 +25,27 @@ const widgets = [
   { name: "Audio Player", component: <AudioPlayer /> },
   { name: "Map Direction", component: <MapDirections /> },
   { name: "Battery Charging", component: <BatteryStats /> },
-  { name: "Music Player", component: <MusicPlayer /> },
+  {
+    name: "Music Player",
+    component: (
+      <MusicPlayer
+        musicTitle="Love Me Like You Do"
+        musicArtist="Ellie Goulding"
+        musicCover="https://upload.wikimedia.org/wikipedia/en/1/17/Ellie_Goulding_-_Love_Me_Like_You_Do.png"
+        isPlaying={true}
+        musicLength={212}
+        musicCurrentTime={67}
+      />
+    ),
+  },
+  { name: "Analog Clock", component: <AnalogClock /> },
+  { name: "Camera Recording", component: <CameraRecording /> },
+  { name: "Apple Calendar Square", component: <AppleCalendarSquare /> },
+  { name: "Battery Charging", component: <BatteryCharging /> },
+  {
+    name: "Apple Battery Square",
+    component: <AppleBatterySquare device="iphone" />,
+  },
 ];
 
 export default function Home() {
