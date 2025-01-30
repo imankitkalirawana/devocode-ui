@@ -49,15 +49,12 @@ export default function AnalogClock({ className }: AnalogClockProps) {
           animate={{ height: "70%" }}
           transition={{ duration: 1, delay: 0.2 }}
         />
-        <motion.div
+        <div
           className="absolute z-20 flex h-[80%] justify-center transition-all before:h-1/2 before:w-[2px] before:bg-[#F8393F] before:content-['']"
           style={{ transform: `rotate(${secondRotation}deg)` }}
-          initial={{ height: "0%" }}
-          animate={{ height: "80%" }}
-          transition={{ duration: 1, delay: 0.4 }}
         >
           <div className="after:content[''] absolute bottom-1/2 left-[1px] h-2 w-2 -translate-x-1/2 translate-y-1/2 rounded-full bg-[#F8393F] after:absolute after:left-1/2 after:h-4 after:w-[2px] after:-translate-x-1/2 after:bg-[#F8393F]"></div>
-        </motion.div>
+        </div>
         <div className="absolute z-10 h-4 w-4 rounded-full bg-white shadow-lg" />
         <div className="relative h-full w-full">
           <div className="absolute left-1/2 top-1/2 z-[1] -translate-x-1/2 -translate-y-1/2 transform text-7xl font-bold text-white drop-shadow-lg">

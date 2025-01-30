@@ -39,17 +39,19 @@ export default function WifiToggle({
               },
             )}
             onClick={handleChange}
+            whileTap={{ scale: 0.9 }}
           >
             <Wifi fontSize={20} />
           </motion.div>
-          <a
+          <motion.a
             href={href || "#"}
             className={cn(
               "flex h-12 w-12 items-center justify-center rounded-full bg-gray-100 text-lg font-bold text-black transition-colors hover:bg-gray-200",
             )}
+            whileTap={{ scale: 0.9 }}
           >
             <ArrowUpRight fontSize={20} />
-          </a>
+          </motion.a>
         </div>
         <div>
           <h3>Wi-Fi</h3>

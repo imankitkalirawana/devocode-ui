@@ -1,3 +1,4 @@
+"use client";
 import { cn } from "@/lib/utils";
 import Visualizer from "./audio-visualizer";
 import { LucideProps, Pause } from "lucide-react";
@@ -18,19 +19,25 @@ export default function AudioPlayer({ className }: AudioPlayerProps) {
       >
         <div className="flex items-center justify-between">
           <div>
-            <div className="text-xs text-[#9C9A9A]">Arrival in</div>
+            <div className="text-xs text-[#9C9A9A]">Recording 1</div>
             <div className="text-2xl font-medium">41min</div>
           </div>
-          <div className="rounded-full bg-[#292929] p-2 hover:bg-[#373737]">
+          <motion.button
+            className="rounded-full bg-[#292929] p-2 hover:bg-[#373737]"
+            whileTap={{ scale: 0.9 }}
+          >
             <Toggle />
-          </div>
+          </motion.button>
         </div>
         <Visualizer />
         <div className="flex items-center justify-between">
           <span>01:18:16</span>
-          <span className="rounded-full bg-[#FA461F] p-2 shadow-[0_12px_30px_4px_rgba(250,70,21,0.5)] transition-colors hover:bg-[#ef5a39]">
+          <motion.button
+            className="rounded-full bg-[#FA461F] p-2 shadow-[0_12px_30px_4px_rgba(250,70,21,0.5)] transition-colors hover:bg-[#ef5a39]"
+            whileTap={{ scale: 0.9 }}
+          >
             <Pause size={16} className="fill-white" strokeWidth={0} />
-          </span>
+          </motion.button>
         </div>
       </div>
     </>
