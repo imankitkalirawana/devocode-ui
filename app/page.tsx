@@ -15,6 +15,7 @@ import CameraRecording from "@/components/devocode/custom/widgets/camera-recordi
 import AppleCalendarSquare from "@/components/devocode/custom/widgets/apple-calendar-square";
 import BatteryCharging from "@/components/devocode/custom/widgets/battery-charging";
 import AppleBatterySquare from "@/components/devocode/custom/widgets/apple-battery-square";
+import { Button } from "@/components/ui/button";
 
 const widgets = [
   { name: "WifiToggle", component: <WifiToggle /> },
@@ -45,6 +46,10 @@ const widgets = [
   {
     name: "Apple Battery Square",
     component: <AppleBatterySquare device="iphone" />,
+  },
+  {
+    name: "Button",
+    component: <Button>Click me</Button>,
   },
 ];
 

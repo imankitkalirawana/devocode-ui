@@ -10,7 +10,7 @@ const config: Config = {
   theme: {
     extend: {
       transitionDuration: {
-        "2000": "2000ms", // Custom duration of 2 seconds
+        "2000": "2000ms",
       },
       colors: {
         background: "hsl(var(--background))",
